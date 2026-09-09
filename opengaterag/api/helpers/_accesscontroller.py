@@ -23,7 +23,7 @@ class AccessController:
 
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                url=f"{configuration.dependencies.opengatellm.url}/v1/me/info",
+                url=f"{configuration.dependencies.opengatellm.url}/v1/me",
                 headers={"Authorization": f"Bearer {api_key.credentials}"},
                 timeout=10,
             )

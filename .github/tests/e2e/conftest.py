@@ -74,7 +74,7 @@ def _validate_opengatellm_api_key(env_var: str, role: str) -> tuple[str, int]:
         raise ValueError(f"{env_var} is not set to run e2e tests.")
     with httpx.Client() as httpx_client:
         response = httpx_client.get(
-            url=f"{configuration.dependencies.opengatellm.url}/v1/me/info",
+            url=f"{configuration.dependencies.opengatellm.url}/v1/me",
             headers={"Authorization": f"Bearer {api_key}"},
         )
         try:
